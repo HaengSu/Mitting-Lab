@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mitting_lab/view/chatting_input.dart';
 import 'package:mitting_lab/view/chatting_message_list.dart';
 
 class ChattingPage extends StatefulWidget {
@@ -9,16 +10,15 @@ class ChattingPage extends StatefulWidget {
 }
 
 class _ChattingPageState extends State<ChattingPage> {
-  final List<String> _dummyMessage = ['안녕','이굠댕'];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: Colors.white,
       body: Padding(padding: EdgeInsets.only(top: 50, left: 20, right: 20),
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Icon(Icons.arrow_back_ios_new),
@@ -28,7 +28,9 @@ class _ChattingPageState extends State<ChattingPage> {
           ),
           SizedBox(height: 10),
           Divider(),
-          ChattingMessageList(message: _dummyMessage,)
+          ChattingMessageList(message: [''],),
+          ChattingInput()
+
         ],
       ),),
     );
